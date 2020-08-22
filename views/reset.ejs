@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOOKspace</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="/stylesheets/reset.css">
+    </head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="/">
+          <img class="nav-logo" src="/images/logo-nav.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        </a>
+    </nav>
+    <div class="container">
+        <% if(errormessage && errormessage.length>0){ %> 
+            <div class="alert alert-danger" role="alert">
+                <%= errormessage %> 
+            </div>
+        <% } %> 
+        <% if(successmessage && successmessage.length>0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= successmessage %> 
+            </div>
+        <% } %>
+    </div>
+<div class="contact-section">
+	<h1>Reset password</h1>
+	<div class="my-border"></div>
+    <form class="contact-form" action="/reset/<%= token %> " method="POST">
+        <label for="password">New Password</label>
+        <input type="password" class="contact-form-text" name="password" value="" placeholder="New Password" autofocus required>
+        <label for="confirm">Confirm Password</label>
+        <input type="password" class="contact-form-text" name="confirm" value="" placeholder="Confirm Password" autofocus required>
+		<input class="contact-form-btn" type="submit" value="Update password" name="">
+	</form>
+</div> 	
+</body>
+</html>

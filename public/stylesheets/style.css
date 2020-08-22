@@ -1,0 +1,596 @@
+.index-img{
+    height: 380px;
+}
+
+@media (max-width: 576px) {
+    .index-img{
+        height: 220px;
+    }
+    .my-title{
+        height: 50px;
+    }
+    .book-date{
+        display: none;
+    }
+}
+
+.jumbo{
+    font-weight: 200;
+}
+.img-thumbnail>img{
+    width: 65%;
+    max-height: 500px;
+}
+.img-thumbnail{
+    padding: 0;
+}
+.img-thumbnail>.caption-full{
+    padding: 9px;
+}
+
+.admin-hide {
+    display: none;
+}
+
+.admin-show{
+    display: block;
+}
+
+/* --------NEW BOOK PAGE----------------- */
+.new-book-form {
+    width: 30%;
+    margin: 25px auto;
+}
+@media (max-width: 570px) {
+    .new-book-form {
+        width: 80%;
+        margin: 25px auto;
+    }
+    .new-book{
+        overflow: hidden;
+    }
+}
+
+
+/* -------show------------ */
+#map {
+     /* position: absolute;  */
+     height: 180px;
+     width: 100%;
+     top: 0; 
+     bottom: 0; 
+     /* width: 100%;  */
+}
+
+.main-container-show{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-show {
+	margin-top: 50px;
+}
+
+.user-show {
+	margin-top: 40px;
+}
+
+.profile-main {
+    background: #fff;
+	margin-bottom: 30px;
+	margin-top: 20px;
+    transition: .5s;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+}
+.profile-main .profile-body {
+    font-size: 14px;
+    color: #424242;
+    padding: 20px;
+    font-weight: 400;
+}
+.profile-page .profile-header {
+    position: relative
+}
+
+.profile-page .profile-header .profile-image img {
+    border-radius: 50%;
+    width: 140px;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
+.profile-page .profile-header .social-icon a {
+    margin: 0 5px
+}
+
+.profile-page .profile-sub-header {
+    min-height: 60px;
+    width: 100%
+}
+
+.profile-page .profile-sub-header ul.box-list {
+    display: inline-table;
+    table-layout: fixed;
+    width: 100%;
+    background: #eee
+}
+
+.profile-page .profile-sub-header ul.box-list li {
+    border-right: 1px solid #e0e0e0;
+    display: table-cell;
+    list-style: none
+}
+
+.profile-page .profile-sub-header ul.box-list li:last-child {
+    border-right: none
+}
+
+.profile-page .profile-sub-header ul.box-list li a {
+    display: block;
+    padding: 15px 0;
+    color: #424242
+}
+
+.profile-image {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	float: left;
+}
+
+.profile-image-show{
+	width: 150px;
+	height: 150px;
+    border-radius: 50%;
+}
+
+.user-show-col{
+    padding: 0;
+}
+.show-title{
+    height: 40px;
+}
+
+@media (max-width: 760px) {
+    .profile-card{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .user-show-title{
+        font-size: 25px;
+    }
+}
+
+/* -----search-box----------- */
+.search-box{
+	width: 900px;
+	/* margin-left: 135px; */
+    /* margin-top: 50px; */
+}
+
+#search-txt{
+	background: #fff;
+    width: 440px;
+    height: 54px;
+    padding: 0 25px;
+    border: 1px solid #420050; 
+
+}
+.purple-btn {
+    background-color: #420050;
+    color: white;
+    border: 0;
+}
+.purple-btn:hover {
+    background-color: #300638;
+    color: white;
+    border: 0;
+}
+.sell-btn {
+    height: 44px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+#search-btn{
+    /* padding-top: 2px ; */
+	position: relative;
+    left: -5px;
+    top: 2px;
+    height: 54px;
+    border: none;
+    width: 40px;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#browse-btn{
+    float: left;
+    height: 54px;
+    outline: none;
+    border: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    border-radius: 5px 0px 0px 5px;
+}
+.button-imp{
+    background: #ff0000;
+    color: #fff;
+    border: 2px solid #ff0000;
+    height: 50px;
+    width: 120px;
+}
+.button-nav{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    color: #420050;
+}
+.jumbo{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+.jumbotron {
+    background-image: linear-gradient( #00bbce, #00d0ff);
+    margin-top: 0;
+    height: 450px;
+}
+.navbar {
+    box-shadow: 0px 9px 17px 3px #0e0e0e33;
+}
+.index-nav {
+    /* background-image: linear-gradient(90deg, #00e7ff, #e400ff); */
+    box-shadow: 0px 8px 8px #0f8abb;
+}
+.nav-logo {
+    width: 170px;
+    height: 50px;
+}
+
+#search-display-text {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    color: white;
+}
+.lead{
+    font-size: 25px;
+    font-weight: 300;
+    color: #fff;
+}
+@media (max-width: 570px) {
+    .nav-logo {
+        width: 120px;
+        height: 40px;
+    }
+    .navbar-text {
+        font-size: 12px;
+    }
+    .button-nav {
+        font-size: 17px;
+        /* width: 50px; */
+        margin-right: 0;
+    }
+    .navbar-brand {
+        margin-right: 0;
+    }
+    .index-cards-col{
+        padding: 4px;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 760px) {
+    .jumbotron-fluid{
+        overflow: hidden;
+    }
+    .jumbo{
+        font-size: 50px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .search-box{
+        width: 500px;
+        /* margin-left: 135px; */
+        /* margin-top: 50px; */
+    }
+    .search-body{
+        overflow: hidden;
+    }
+    
+    #search-txt{
+        background: #fff;
+        width: 200px;
+        height: 50px;
+        padding: 0 10px;
+    
+    }
+    
+    #search-btn{
+        position: relative;
+        left: -5px;
+        height: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        top: 2px;
+        width: 40px;
+        border-radius: 0 5px 5px 0;
+        font-size: 20px;
+    }
+    
+    #browse-btn{
+        float: left;
+        height: 50px;
+        outline: none;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    .button-nav{
+        background: transparent;
+        border: 0;
+        outline: 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-right: 5px;
+    }
+    
+    .jumbotron {
+        background-image: l linear-gradient( #00bbce, #00d0ff);
+        margin-top: 0;
+        height: 550px;
+    }
+    
+    #search-display-text {
+        margin-top: 60px;
+        margin-bottom: 10px;
+        color: white;
+    }
+    .lead{
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .card-text {
+        margin-bottom: 0 ;
+    }
+    
+}
+
+
+/* -----------FOOTER---------------------- */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+  font-family: Roboto;
+}
+
+.footer-distributed{
+	background: #444;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+	text-align: left;
+	padding: 50px 60px 40px;
+	overflow: hidden;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 60vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Roboto', cursive;
+	margin: 0 0 10px;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons{
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form{
+	display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #d1d2d2;
+
+	width: 400px;
+	padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer-distributed form input{
+	height: 55px;
+	margin-bottom: 15px;
+}
+
+.footer-distributed form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed form button{
+	border-radius: 3px;
+	background-color:  #33383b;
+	color: #ffffff;
+	border: 0;
+	padding: 15px 50px;
+	font-weight: bold;
+	float: right;
+}
+.footer-center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 270px;
+}
+.footer-logo {
+    width: 250px;
+}
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+.footer-center {
+    margin-top: 300px;
+}
+
+@media (max-width: 800px) {
+    .footer-center{
+        margin-top: 80px;
+        
+    }
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
+}

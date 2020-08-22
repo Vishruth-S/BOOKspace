@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOOKspace</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://kit.fontawesome.com/f9cc6eebb4.js" crossorigin="anonymous"></script>
+    <body>
+    <!-- Image and text -->
+    <% if(search) { %>
+        <nav class="navbar">
+    <% } else {%> 
+        <nav class="navbar index-nav">
+    <% } %> 
+    <a class="navbar-brand" href="/">
+      <img class="nav-logo" src="/images/logo-nav.png"  width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <span class="navbar-text">
+        <% if(!currentUser){ %>
+            <a href="/register" type="button"><button class="button-nav">Sign In</button></a>
+        <%}else{%>
+        <span class="mr-2">Signed in as <%= currentUser.username %> </span>
+        <a href="/logout" type="button"><button class="button-nav">Logout</button></a>
+        <%}%> 
+    </span>
+    </nav>
+    <% if(!search) {%> 
+    <% if(current==1) { %> 
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 jumbo">Welcome to BOOKspace</h1>
+        <p class="lead">Sell or buy any book you like</p>
+        <a href="/books/new" role="button"><button class="purple-btn sell-btn">sell a book!</button> </a>
+        <% } %> 
+        <h3 id="search-display-text">Looking for a book? </h3>
+    <% } %> 
+        <div class="mt-3 mb-5 search-body">  
+            <% if(search) {%> 
+                <div class="search-box ml-3">
+            <% } else { %> 
+                <div class="search-box">
+            <% } %>  
+            <a href="/books"><input class="search purple-btn"  id="browse-btn" type="submit" value="Show all books" name=""></a>
+            <form action="/books" method="GET">
+                <input class="search-txt" id="search-txt" type="text" name="search" placeholder="  Search for a book" >
+                <button class="search purple-btn" id="search-btn" type="submit"> <i class="fas fa-search"></i></button>
+            </form>
+        </div> 
+        </div>
+        </div>
+</div>
+
+<div class="container">
+    <% if(errormessage && errormessage.length>0){ %> 
+        <div class="alert alert-danger" role="alert">
+            <%= errormessage %> 
+        </div>
+    <% } %> 
+    <% if(successmessage && successmessage.length>0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= successmessage %> 
+        </div>
+    <% } %>
+    </div>
+<div class="container">
+    <% if(search) { %>
+        <h2>Search results for <%= search %> </h2>
+    <% } else { %> 
+    <h2 class="mb-3">Currently on sale</h2>
+    <% } %> 
+    <hr class="mb-3">
+</div>
+
+  <div class="row row-cols-2 row-cols-lg-4 row-cols-xs-2 ml-sm-5 mr-sm-5 ml-1 mr-1">
+    <% books.forEach(book=>{ %>
+        <div class="col mb-md-5 index-cards-col">
+            <div class="card">
+                <img src="<%=book.image%>" class="card-img-top index-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title my-title"><%= book.name %></h5>
+                    <p class="card-text float-right book-date"><%= moment(book.createdAt).format("MMM DD") %></p>
+                    <p class="card-text"><em><%= book.author %> </em></p>
+                    <a class="stretched-link" href="/books/<%=book._id %>"></a>
+                </div>
+            </div>
+        </div>
+    <% }) %>  
+</div>
+
+<nav aria-label="Page navigation">
+    <% if (pages && pages > 0) { %>
+    <ul class="pagination justify-content-center">
+        <% if (current == 1) { %>
+        <li class="page-item disabled"><a class="page-link">First</a></li>
+        <% } else { %>
+        <li><a class="page-link" href="/books<%if(search){%>?search=<%=search%><%}%>">First</a></li>
+        <% } %>
+ 
+        <% if (current == 1) { %>
+        <li class="page-item disabled"><a class="page-link">«</a></li>
+        <% } else { %>
+        <li><a class="page-link" href="/books?page=<%= Number(current) - 1 %><%if(search){%>&search=<%=search%><%}%>">«</a></li>
+        <% } %>
+ 
+        <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+        <% if (i !== 1) { %>
+        <li class="page-item disabled"><a class="page-link">...</a></li>
+        <% } %>
+        <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+        <% if (i == current) { %>
+        <li class="active"><a class="page-link"><%= i %></a></li>
+        <% } else { %>
+        <li><a class="page-link" href="/books?page=<%= i %><%if(search){%>&search=<%=search%><%}%>"><%= i %></a></li>
+        <% } %>
+        <% if (i == Number(current) + 4 && i < pages) { %>
+        <li class="page-item disabled"><a class="page-link">...</a></li>
+        <% } %>
+        <% } %>
+ 
+        <% if (current == pages) { %>
+        <li class="page-item disabled"><a class="page-link">»</a></li>
+        <% } else { %>
+        <li><a class="page-link" href="/books?page=<%= Number(current) + 1 %><%if(search){%>&search=<%=search%><%}%>">»</a></li>
+        <% } %>
+ 
+        <% if (current == pages) { %>
+        <li class="page-item disabled"><a class="page-link">Last</a></li>
+        <% } else { %>
+        <li><a class="page-link"href="/books?page=<%= pages %><%if(search){%>&search=<%=search%><%}%>">Last</a></li>
+        <% } %>
+    </ul>
+    <% } %>
+</nav>
+
+<%- include("partials/footer.ejs") %>

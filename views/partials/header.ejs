@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOOKpace</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css" type="text/css" />
+        <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+        <script src="https://kit.fontawesome.com/f9cc6eebb4.js" crossorigin="anonymous"></script>
+    <body>
+    <!-- Image and text -->
+    <nav class="navbar">
+    <a class="navbar-brand" href="/">
+      <img class="nav-logo" src="/images/logo-nav.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <span class="navbar-text">
+        <% if(!currentUser){ %>
+            <a href="/register" type="button"><button class="button-nav">Sign In</button></a>
+        <%}else{%>
+        <span class="mr-2">Signed in as <%= currentUser.username %> </span>
+        <a href="/logout" type="button"><button class="button-nav">Logout</button></a>
+        <%}%> 
+    </span>
+    </nav>
+    <div class="container">
+    <% if(errormessage && errormessage.length>0){ %> 
+        <div class="alert alert-danger" role="alert">
+            <%= errormessage %> 
+        </div>
+    <% } %> 
+    <% if(successmessage && successmessage.length>0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= successmessage %> 
+        </div>
+    <% } %>
+    </div>

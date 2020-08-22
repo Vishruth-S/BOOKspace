@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOOKspace</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="/stylesheets/forgot.css">
+        <script src="https://kit.fontawesome.com/f9cc6eebb4.js" crossorigin="anonymous"></script>
+    <body>
+    <!-- Image and text -->
+    <nav class="navbar">
+    <a class="navbar-brand" href="/">
+      <img class="nav-logo" src="/images/logo-nav.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    </nav>
+    
+    
+<div class="wrapper">
+	<div class="container">
+        <h1>Forgot your password?</h1>
+        <h3>No problem, we'll help you log back in.</h3>
+        <div class="container">
+            <% if(errormessage && errormessage.length>0){ %> 
+                <div class="alert alert-danger" role="alert">
+                    <%= errormessage %> 
+                </div>
+            <% } %> 
+            <% if(successmessage && successmessage.length>0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= successmessage %> 
+                </div>
+            <% } %>
+        </div>
+        <p>Please enter your registered email address</p>
+		<form class="form" action="/forgot" method="POST">
+			<input type="email" name="email" placeholder="email" required>
+			<button type="submit" id="login-button">Reset password</button>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+    
+            <img class="footer-logo" src="/images/logo-footer.png">
+    
+            <p class="footer-links">
+                
+            </p>
+    
+    
+            <!-- <div class="footer-icons">
+    
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+    
+            </div> -->
+    
+        </div>
+    
+        <div class="footer-right">
+    
+            <h4 style="color: white;font: normal 20px 'Roboto', cursive;">Contact Us</h4>
+        <h5 style="color: white;font: normal 20px 'Roboto', cursive;"><i class="fas fa-envelope-square"></i> info.bookspace5@gmail.com</h5>
+        </div>
+        <div class="footer-center" >
+            <h4 class="footer-company-name">BOOKspace © 2020</h4>
+            <h4 class="footer-company-name">Designed and developed by <a href="https://vishruth-s.github.io/Me/" target="_blank">VS</a></h4>
+        </div>
+    
+    </footer>
+        
+    <script>
+        $("#login-button").click(function(event){
+            event.preventDefault();
+        
+        $('form').fadeOut(500);
+        $('.wrapper').addClass('form-success');
+   });
+   </script>
+        </body>
+        </html>
+

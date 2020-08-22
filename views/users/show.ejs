@@ -1,0 +1,32 @@
+<%- include("../partials/header.ejs") %> 
+
+<div class="container main-container-show">
+<div class="row">
+    <div class="col-md-3 profile-card">
+        <div > <img class="profile-image-show mt-3" src="/images/avatar.png" alt=""> </div>
+        <h1 class="mt-3"><%= user.username %> </h1>
+        <h4 class=""><i class="fas fa-phone-alt"></i> <%= user.phone %></h4>
+    </div>
+<div class="col-md-9 user-show-col">
+    <h3 class="mt-4 mb-2 ml-3 user-show-title">Books for sale by <%= user.username %> </h3>
+    <hr class="mb-4">
+    <div class="row row-cols-2 row-cols-lg-4 row-cols-xs-2 ml-sm-5 mr-sm-5 ml-1 mr-1">
+    <% books.forEach(book=>{ %>
+        <div class="col mb-4" >
+        <div class="card">
+                <img src="<%=book.image%>" class="card-img-top show-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title show-title"><%= book.name %></h5>
+                    <p class="card-text float-right book-date"><%= moment(book.createdAt).format("MMM DD") %></p>
+                    <p class="card-text"><em><%= book.author %> </em></p>
+                    <a class="stretched-link" href="/books/<%=book._id %>"></a>
+                </div>
+            </div>
+        </div>
+    <% }) %> 
+</div>
+</div>
+</div>
+</div>
+
+<%- include("../partials/footer.ejs") %>
