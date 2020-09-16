@@ -16,12 +16,14 @@ const LocalStrategy = require('passport-local')
 const bookRoutes = require("./routes/books")
 const indexRoutes = require('./routes/index')
 
+const mongod_password = process.env.MONGODPASS
+
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-const Database_url = "mongodb+srv://dbUserVS:mongoduservs005@vscluster0-vfwe5.mongodb.net/test?retryWrites=true&w=majority"
+const Database_url = "mongodb+srv://dbUserVS:"+mongod_password+"@vscluster0-vfwe5.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(Database_url, {
 
 }).then(()=>{
