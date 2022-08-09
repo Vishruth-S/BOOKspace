@@ -23,18 +23,18 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-const Database_url = "mongodb+srv://dbUserVS:"+mongod_password+"@vscluster0-vfwe5.mongodb.net/test?retryWrites=true&w=majority"
+const Database_url = "mongodb+srv://dbUserVS:" + mongod_password + "@vscluster0.vfwe5.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(Database_url, {
 
-}).then(()=>{
+}).then(() => {
     console.log("connected to DB");
-}).catch(err=>{
-    console.log("Error",err.message)
+}).catch(err => {
+    console.log("Error", err.message)
 })
 
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'))
-app.set('view engine',"ejs")
+app.set('view engine', "ejs")
 app.use(methodOverride("_method"))
 
 app.use(require('express-session')({
@@ -50,7 +50,7 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
     res.locals.currentUser = req.user
     app.locals.moment = require('moment');
     res.locals.errormessage = req.flash("error")
@@ -62,6 +62,6 @@ app.use(indexRoutes)
 app.use(bookRoutes)
 
 const port = process.env.PORT || 1008
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log("Server running at http://localhost:1008")
 })
